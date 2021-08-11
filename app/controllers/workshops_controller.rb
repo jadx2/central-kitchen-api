@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WorkshopsController < ApplicationController
   before_action :set_workshop, only: :show
 
