@@ -2,12 +2,11 @@ class WorkshopsController < ApplicationController
   before_action :set_workshop, only: :show
 
   def index
-    @workshops = Workshop.all
-    json_response(@workshops)
+    render json: Workshop.all, status: :ok
   end
 
   def show
-    json_response(@workshop)
+    render json: @workshop, status: :ok
   end
 
   private
