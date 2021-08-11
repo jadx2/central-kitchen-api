@@ -3,6 +3,7 @@ class CreateWorkshops < ActiveRecord::Migration[6.1]
     create_table :workshops do |t|
       t.string :title
       t.text :description
+      t.text :menu
       t.text :dates, array: true, default: []
       t.string :image
 

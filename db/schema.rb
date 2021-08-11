@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_220952) do
   create_table "workshops", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.text "menu"
     t.text "dates", default: [], array: true
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
