@@ -2,9 +2,15 @@
 
 class AuthenticationController < ApplicationController
   def create
-    p params.require(:email)
-    p params.require(:password)
+    raise AuthenticationError unless user.authenticate(params.require(:password))
+    token = AuthenticationToken.call(user.id)
 
-    render json: { token: '123' }, status: :created
+    render json: { token: token }, status: :created
+  end
+
+  private
+
+  def user
+    @user ||= User.find_by(email: params.require(:email))
   end
 end
