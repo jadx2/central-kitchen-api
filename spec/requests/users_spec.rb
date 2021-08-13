@@ -16,6 +16,10 @@ RSpec.describe 'Users', type: :request do
     it 'returns a token after signup' do
       expect(JSON.parse(response.body)['token']).not_to be_nil
     end
+
+    it 'returns success message' do
+      expect(JSON.parse(response.body)['message']).to match(/Account created successfully/)
+    end
   end
 
   describe 'POST /login' do
