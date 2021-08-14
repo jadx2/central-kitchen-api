@@ -27,11 +27,9 @@ class Message
     'Account created successfully'
   end
 
-  def self.account_not_created
-    'Account could not be created'
-  end
-
-  def self.expired_token
-    'Sorry, your token has expired. Please login to continue.'
+  def self.attendance_created(attendance)
+    "Attendance Created:
+    #{attendance.date}
+    #{attendance.attended_workshop}"
   end
 end
