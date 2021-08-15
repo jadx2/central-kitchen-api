@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ControllerSpecHelper
   def token_generator(user_id)
     AuthenticationToken.encode(user_id)
@@ -5,15 +7,7 @@ module ControllerSpecHelper
 
   def valid_headers
     {
-      'Authorization' => token_generator(user.id),
-      'Content-Type' => 'application/json',
-    }
-  end
-
-  def invalid_headers
-    {
-      'Authorization' => nil,
-      'Content-Type' => 'application/json',
+      'Authorization' => token_generator(user.id)
     }
   end
 end

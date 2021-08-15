@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Service for creating token from JWT
 class AuthenticationToken
   HMAC_SECRET = Rails.application.secrets.secret_key_base
   ALGORITHM_TYPE = 'HS256'

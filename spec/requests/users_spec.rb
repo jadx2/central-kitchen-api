@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
@@ -5,33 +7,24 @@ RSpec.describe 'Users', type: :request do
   let(:user2) { build(:user) }
 
   describe 'POST /signup' do
-    before {
+    before do
       post '/signup', params: { username: user2.username, email: user2.email, password: user2.password }
-    }
+    end
 
-    it 'creates a new user and returns code 201' do
+    it 'creates a new user and returns code 201 with success message and token' do
       expect(response).to have_http_status(:created)
-    end
-
-    it 'returns a token after signup' do
-      expect(JSON.parse(response.body)['token']).not_to be_nil
-    end
-
-    it 'returns success message' do
       expect(JSON.parse(response.body)['message']).to match(/Account created successfully/)
+      expect(JSON.parse(response.body)['token']).not_to be_nil
     end
   end
 
   describe 'POST /login' do
-    before {
+    before do
       post '/login', params: { email: user1.email, password: user1.password }
-    }
-
-    it 'logins user' do
-      expect(response).to have_http_status(:created)
     end
 
-    it 'return a token after login' do
+    it 'logins user and returns token' do
+      expect(response).to have_http_status(:created)
       expect(JSON.parse(response.body)['token']).not_to be_nil
     end
 

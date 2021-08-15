@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
+# Controller to authorize requests
 class AuthorizeApiRequest
   def initialize(headers = {})
     @headers = headers
   end
 
   def call
-    {
-      user: user,
-    }
+    { user: user }
   end
 
   private
@@ -15,7 +16,7 @@ class AuthorizeApiRequest
 
   def user
     @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
-  rescue ActiveRecord::RecordNotFound => e
+  rescue ActiveRecord::RecordNotFound
     raise(
       ExceptionHandler::InvalidToken,
       Message.invalid_token
@@ -27,9 +28,8 @@ class AuthorizeApiRequest
   end
 
   def http_auth_header
-    if headers['Authorization'].present?
-      return headers['Authorization']
-    end
-    raise(ExceptionHandler::MissingToken, Message.missing_token)
+    return headers['Authorization'] if headers['Authorization'].present?
+
+    raise(ExceptionHandler::MissingToken, Message.unauthorized)
   end
 end

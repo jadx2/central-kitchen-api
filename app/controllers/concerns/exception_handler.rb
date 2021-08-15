@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+# Module that handles errors
 module ExceptionHandler
   extend ActiveSupport::Concern
 
   class AuthenticationError < StandardError; end
+
   class MissingToken < StandardError; end
+
   class InvalidToken < StandardError; end
 
   included do
@@ -20,11 +23,11 @@ module ExceptionHandler
 
   private
 
-  def four_twenty_two(e)
-    render json: { error: e.message }, status: :unprocessable_entity
+  def four_twenty_two(err)
+    render json: { error: err.message }, status: :unprocessable_entity
   end
 
-  def unauthorized_request(e)
+  def unauthorized_request(_err)
     head :unauthorized
   end
 end

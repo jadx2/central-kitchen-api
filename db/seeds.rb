@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Layout/LineLength
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -45,3 +47,5 @@ Our chefs in Spain will guide you step-by-step, live from their homes in Spain, 
 Workshop.create(title: 'LOMO SALTADO', description: { subtitle: 'MASTER THE BLEND OF PERU AND CHINA WITH THIS PERUVIAN STIRFRY', description: "
 Considered one of Peru's most loved dishes, Lomo Saltado, is considered a 'must have' when travelling to Peru.  In this class you'll learn about the fascinating history of Peru and China, and their culinary combination, known as 'Chifa'. Chifa is a cooking practice that uses the abundance of Peruvian ingredients with Chinese influence, and a tradition that dates back to the 1920's.  This important storyline of your class will be understood best as you taste your final dish.
 In this cooking class you will make three different dishes, Lomo Saltado, a traditional beef stirfry, alongside Tacu Tacu and Sarsa Criolla. It's a menu that will elevate your average night-in to a Peruvian fine dining experience." }, menu: { dish1: 'Lomo Saltado | Peruvian "Chifa" Style Beef and Pepper Stirfry', dish2: 'Tacu Tacu "a lo pobre" | Rice and Beans with Fried Egg and Plantain', dish3: 'Sarsa Criolla | Fresh Onion Side' }, dates: create_dates, image: 'https://static.wixstatic.com/media/3106e5_eb87c28c4d834b1eae6937dd071cc32f~mv2.jpg/v1/fill/w_980,h_468,al_c,q_85,usm_0.66_1.00_0.01/3106e5_eb87c28c4d834b1eae6937dd071cc32f~mv2.webp')
+
+# rubocop:enable Layout/LineLength

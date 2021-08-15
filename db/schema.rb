@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/BlockLength
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,39 +14,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_233230) do
-
+ActiveRecord::Schema.define(version: 20_210_813_233_230) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "attendances", force: :cascade do |t|
-    t.bigint "attendee_id", null: false
-    t.bigint "attended_workshop_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "date"
-    t.index ["attended_workshop_id"], name: "index_attendances_on_attended_workshop_id"
-    t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
+  create_table 'attendances', force: :cascade do |t|
+    t.bigint 'attendee_id', null: false
+    t.bigint 'attended_workshop_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'date'
+    t.index ['attended_workshop_id'], name: 'index_attendances_on_attended_workshop_id'
+    t.index ['attendee_id'], name: 'index_attendances_on_attendee_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
-    t.string "username"
+  create_table 'users', force: :cascade do |t|
+    t.string 'email'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'password_digest'
+    t.string 'username'
   end
 
-  create_table "workshops", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.text "menu"
-    t.text "dates", default: [], array: true
-    t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'workshops', force: :cascade do |t|
+    t.string 'title'
+    t.text 'description'
+    t.text 'menu'
+    t.text 'dates', default: [], array: true
+    t.string 'image'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "attendances", "users", column: "attendee_id"
-  add_foreign_key "attendances", "workshops", column: "attended_workshop_id"
+  add_foreign_key 'attendances', 'users', column: 'attendee_id'
+  add_foreign_key 'attendances', 'workshops', column: 'attended_workshop_id'
 end
+
+# rubocop:enable Metrics/BlockLength

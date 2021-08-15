@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller for user creation and login
 class UsersController < ApplicationController
   def create
     user = User.create!(user_params)
@@ -8,6 +11,7 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     raise(AuthenticationError, Message.missing_credentials) unless user.authenticate(params[:password])
+
     token = AuthenticationToken.encode(user.id)
 
     render json: { token: token }, status: :created

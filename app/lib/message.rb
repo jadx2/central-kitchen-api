@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Messages global storage
 class Message
   def self.not_found(record = 'record')
     "Sorry, #{record} not found."
@@ -28,8 +31,6 @@ class Message
   end
 
   def self.attendance_created(attendance)
-    "Attendance Created:
-    #{attendance.date}
-    #{attendance.attended_workshop}"
+    "Attendance Created: {workshop: #{attendance.attended_workshop.title}, date: #{attendance.date}}"
   end
 end
