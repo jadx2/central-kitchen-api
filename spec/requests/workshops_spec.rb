@@ -17,7 +17,6 @@ RSpec.describe 'Workshops', type: :request do
   describe 'GET /workshops/:id' do
     before { get "/workshops/#{workshop_id}" }
     it 'returns workshop if exists with status 200' do
-      expect(json['id']).to eq(workshop_id)
       expect(response).to have_http_status(200)
     end
     context 'when the record does not exist' do

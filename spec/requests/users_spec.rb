@@ -13,8 +13,8 @@ RSpec.describe 'Users', type: :request do
 
     it 'creates a new user and returns code 201 with success message and token' do
       expect(response).to have_http_status(:created)
-      expect(JSON.parse(response.body)['message']).to match(/Account created successfully/)
       expect(JSON.parse(response.body)['token']).not_to be_nil
+      expect(JSON.parse(response.body)['username']).to eq(user2.username)
     end
   end
 
