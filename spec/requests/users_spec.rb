@@ -12,7 +12,6 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'creates a new user and returns code 201 with success message and token' do
-      p JSON.parse(response.body)
       expect(response).to have_http_status(:created)
       expect(JSON.parse(response.body)['token']).not_to be_nil
     end
@@ -24,7 +23,6 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'logins user and returns token' do
-      p JSON.parse(response.body)
       expect(response).to have_http_status(:created)
       expect(response).to have_http_status(:created)
       expect(JSON.parse(response.body)['token']).not_to be_nil

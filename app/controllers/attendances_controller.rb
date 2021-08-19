@@ -10,13 +10,13 @@ class AttendancesController < ApplicationController
   end
 
   def create
-    attendance = current_user.attendances.create!(attendance_params)
+    attendance = Attendance.create!(attendance_params)
     render json: { message: Message.attendance_created }, status: :created
   end
 
   private
 
   def attendance_params
-    params.permit(:attendee_id, :attended_workshop_id, :date)
+    params.permit(:attendee_id, :attended_workshop_id, :date, :attendance)
   end
 end
