@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def create
     user = User.create!(user_params)
     token = AuthenticationToken.encode(user.id)
-    render json: { token: token, username: user.username }, status: :created
+    render json: { token: token, user: user }, status: :created
   end
 
   def login
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     token = AuthenticationToken.encode(user.id)
 
-    render json: { token: token, username: user.username }, status: :created
+    render json: { token: token, user: user }, status: :created
   end
 
   private

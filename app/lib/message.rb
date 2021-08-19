@@ -30,7 +30,7 @@ class Message
     'Account created successfully'
   end
 
-  def self.attendance_created(attendance)
-    "Attendance Created: {workshop: #{attendance.attended_workshop.title}, date: #{attendance.date}}"
+  def self.attendance_created
+    'Attendance Created'
   end
 end

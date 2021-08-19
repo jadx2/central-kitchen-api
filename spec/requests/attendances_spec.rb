@@ -19,7 +19,7 @@ RSpec.describe 'Attendances', type: :request do
     it 'creates a new attendance and returns 201 and success message' do
       expect(response).to have_http_status(201)
       expect(JSON.parse(response.body)['message']).to match(
-        "Attendance Created: {workshop: #{workshop.title}, date: #{workshop.dates.first}}"
+        'Attendance Created'
       )
     end
 
