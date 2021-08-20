@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-# Controller for attendances
+# ApplicationController
 class AttendancesController < ApplicationController
   before_action :authorize_request
 

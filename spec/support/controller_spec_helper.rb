@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ControllerSpecHelper
   def token_generator(user_id)
     AuthenticationToken.encode(user_id)
@@ -7,7 +5,7 @@ module ControllerSpecHelper
 
   def valid_headers
     {
-      'Authorization' => token_generator(user.id)
+      'Authorization' => token_generator(user.id),
     }
   end
 end

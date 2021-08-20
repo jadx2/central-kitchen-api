@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Controller to authorize requests
 class AuthorizeApiRequest
   def initialize(headers = {})

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Controller for user creation and login
 class UsersController < ApplicationController
   def create

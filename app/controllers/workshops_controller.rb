@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Controller for workshops index and show
 class WorkshopsController < ApplicationController
   before_action :set_workshop, only: :show

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe AuthenticationToken do
@@ -12,7 +10,7 @@ RSpec.describe AuthenticationToken do
       expect(decoded_token).to eq(
         [
           { 'user_id' => 1 },
-          { 'alg' => 'HS256' }
+          { 'alg' => 'HS256' },
         ]
       )
     end

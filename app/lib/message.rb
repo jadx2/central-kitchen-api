@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Messages global storage
 class Message
   def self.not_found(record = 'record')

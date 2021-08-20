@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Basic Application controller
 class ApplicationController < ActionController::API
   include ExceptionHandler
