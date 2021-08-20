@@ -25,6 +25,7 @@ GET (/attendances) with params: {:Authorization(given token after signup or logi
 - Simple-form v5.1
 - Rubocop v1.11
 - Postgres
+- Rack-Cors
 - JWT
 - Bcrypt
 - Active Model Serializer
