@@ -12,6 +12,10 @@ POST (/attendances) with params: {:attendee_id(user_id), attended_workshop_id(wo
 GET (/attendances) with params: {:Authorization(given token after signup or login)} => to retrieve all current user's attendances.
 ```
 
+### Frontend repo
+
+[Frontend Repo](https://github.com/jadx2/central-kitchen)
+
 ## Built With
 
 - Ruby v3.0.2
