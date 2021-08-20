@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/BlockLength
-
 require 'rails_helper'
 
 RSpec.describe 'Attendances', type: :request do
@@ -41,5 +39,3 @@ RSpec.describe 'Attendances', type: :request do
     end
   end
 end
-
-# rubocop:enable Metrics/BlockLength

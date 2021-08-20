@@ -10,7 +10,7 @@ class AttendancesController < ApplicationController
   end
 
   def create
-    attendance = Attendance.create!(attendance_params)
+    Attendance.create!(attendance_params)
     render json: { message: Message.attendance_created }, status: :created
   end
 
