@@ -10,7 +10,7 @@ RSpec.describe AuthenticationToken do
       expect(decoded_token).to eq(
         [
           { 'user_id' => 1 },
-          { 'alg' => 'HS256' },
+          { 'alg' => 'HS256' }
         ]
       )
     end
