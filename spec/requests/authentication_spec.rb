@@ -17,5 +17,10 @@ RSpec.describe 'Authentications', type: :request do
       post '/authentication', params: { email: user.email, password: 'password1' }
       expect(response).to have_http_status(:unauthorized)
     end
+
+    it 'returns error when email is incorrect' do
+      post '/authentication', params: { email: 'ash@email.com', password: 'password1' }
+      expect(response).to have_http_status(:unauthorized)
+    end
   end
 end
