@@ -6,8 +6,8 @@
 You can perform:
 POST ( /workshops ) => to retrieve the list of workshops,
 GET (/workshops/:id) => to retrieve the details of a given workshop,
-POST (/signup) with params:  { :username, :email, :password, :password_confirmation } => to create a new user,
-POST (/login) with params: { :email, :password } => to login an existing user,
+POST (/users) with params:  { :username, :email, :password, :password_confirmation } => to create a new user,
+POST (/authentication) with params: { :email, :password } => to login an existing user,
 POST (/attendances) with params: {:attendee_id(user_id), attended_workshop_id(workshop_id), :date, :Authorization(given token after login or signup)} => to create a new attendance,
 GET (/attendances) with params: {:Authorization(given token after signup or login)} => to retrieve all current user's attendances.
 ```
