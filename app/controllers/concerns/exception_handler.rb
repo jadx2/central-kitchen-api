@@ -25,7 +25,7 @@ module ExceptionHandler
     render json: { error: err.message }, status: :unprocessable_entity
   end
 
-  def unauthorized_request(_err)
-    head :unauthorized
+  def unauthorized_request(err)
+    render json: { error: err.message }, status: :unauthorized
   end
 end
