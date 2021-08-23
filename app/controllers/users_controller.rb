@@ -6,15 +6,6 @@ class UsersController < ApplicationController
     render json: { token: token, user: user }, status: :created
   end
 
-  def login
-    user = User.find_by(email: params[:email])
-    raise(AuthenticationError, Message.missing_credentials) unless user.authenticate(params[:password])
-
-    token = AuthenticationToken.encode(user.id)
-
-    render json: { token: token, user: user }, status: :created
-  end
-
   private
 
   def user_params
